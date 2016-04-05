@@ -2,13 +2,36 @@ package com.twitter;
 
 import java.util.LinkedList;
 import com.twitter.poruke.TwitterPoruka;
-
+/**
+ * Ova klasa sadrzi metode za upravljanje twitter porukama.
+ * 
+ * @author Jovana Stojadinovic
+ * @version 1.0
+ *
+ */
 public class Twitter {
+	/**
+	 * Inicijalizacija liste objekata klase TwitterPoruka.
+	 */
 	private LinkedList<TwitterPoruka> poruke = new LinkedList<TwitterPoruka>();
+	/**
+	 * Metoda koja vraca sve poruke iz liste poruka
+	 * 
+	 * @return lista poruka
+	 */
+
 
 	public LinkedList<TwitterPoruka> vratiSvePoruke() {
 		return poruke;
 	}
+	/**
+	 * Metoda za pravljenje nove poruke, koja se puni podacima o korisniku i tekstu poruke
+	 * 
+	 * @param korisnik
+	 *            nova vrednost atributa korisnik
+	 * @param poruka
+	 *            nova vrednost atributa poruka
+	 */
 
 	public void unesi(String korisnik, String poruka) {
 		// Pravi se nova poruka i puni podacima.
@@ -18,6 +41,16 @@ public class Twitter {
 		// Poruka se unosi u listu na kraj
 		poruke.addLast(tp);
 	}
+	/**
+	 * Metoda vraca niz objekata klase TwitterPoruka koji u svojoj poruci imaju
+	 * tag prosledjen kao parametar
+	 * 
+	 * @param maxBroj
+	 *            kapacitet niza koji metoda vraca
+	 * @param tag
+	 *            tag koji je sadrzan u porukama
+	 * @return niz objekata klase TwitterPoruka
+	 */
 
 	public TwitterPoruka[] vratiPoruke(int maxBroj, String tag) {
 		if (tag == null || tag == "")
